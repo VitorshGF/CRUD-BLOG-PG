@@ -3,6 +3,7 @@
 __Version:__
 - Ruby:  2.7.1
 - Rails: 6
+- Postgres: 12
 
 __Configuracion__
 - Recordar configurar el database.yml con los credenciales correctos de la DB
