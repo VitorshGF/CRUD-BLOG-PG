@@ -7,10 +7,14 @@ __Version:__
 
 __Configuracion__
 - Recordar configurar el database.yml con los credenciales correctos de la DB
+- bundle install 
+- yarn install
 
 __Database__
 - rails db:create
 - rails db:migrate
+
+En caso de ser necesario: 
 - rails db:rollback
 - rails db:drop
 
