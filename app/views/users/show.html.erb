@@ -1,0 +1,33 @@
+<div class="w3-container">
+  <h1>Detalles del usuario:</h1>
+</div>
+<header class="w3-container w3-blue">
+  <p>
+    <h1><%= @user.username %></h1>
+  </p>
+</header>
+
+<div class="w3-container">
+  <p>
+    <strong>E-Mail:
+    </strong>
+    <%= @user.email %>
+  </p>
+</div>
+
+<%= render 'articles/articles' %>
+
+<!-- will_paginate -->
+<div class="digg_pagination w3-margin">
+  <%= will_paginate @articles, :container => false %>
+</div>
+<!---->
+
+<br></br>
+<div class="w3-row">
+  <div class="w3-col s4 w3-center"><%= button_to 'Volver a Usuarios', users_path, method: :get, class: "w3-button w3-white w3-border w3-border-blue" %></div>
+  <% if logged_in? && @user == current_user%>
+    <div class="w3-col s4 w3-center"><%= button_to 'Editar profile', edit_user_path(@user), method: :get, class: "w3-button w3-white w3-border w3-border-blue" %></div>
+    <div class="w3-col s4 w3-center"><%= button_to 'Eliminar Cuenta', user_path(@user), method: :delete, data: { confirm: 'Seguro ?' }, class: "w3-button w3-white w3-border w3-border-red" %></div>
+  <% end %>
+</div>

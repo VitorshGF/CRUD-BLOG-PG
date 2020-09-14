@@ -1,0 +1,26 @@
+<div class="w3-container">
+  <table class="w3-table-all">
+
+    <thead>
+      <th>Usuario</th>
+      <th colspan="1">Actions</th>
+    </thead>
+
+    <tbody>
+      <% @users.each do |usr| %>
+        <tr>
+          <td><%= usr.username %></td>
+          <td>
+            <div class="w3-bar">
+              <%= button_to 'Mostrar', user_path(usr), method: :get, class: "w3-btn w3-ripple w3-blue w3-bar-item w3-margin-right"%>
+              <% if logged_in? && usr == current_user %>
+                <%= button_to 'Editar', edit_user_path(usr), method: :get, class: "w3-btn w3-ripple w3-teal w3-bar-item w3-margin-right" %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>

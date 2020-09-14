@@ -1,0 +1,31 @@
+<%= render "commons/errors", obj: @user %>
+<!-- Prevents from using AJAX with local: true, form_with is the Rails helper -->
+
+
+<div class="w3-container">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <p>
+      <div>
+        <%= f.label :username, class: "w3-xlarge w3-text-dark-gray" %>
+        <br></br>
+        <%= f.text_field :username, class: "w3-input w3-border" %>
+      </div>
+      <div>
+        <%= f.label :email, class: "w3-xlarge w3-text-dark-gray" %>
+        <br></br>
+        <%= f.email_field :email, class: "w3-input w3-border" %>
+      </div>
+      <div>
+        <%= f.label :password, class: "w3-xlarge w3-text-dark-gray" %>
+        <br></br>
+        <%= f.password_field :password, class: "w3-input w3-border" %>
+      </div>
+
+      <div>
+        <p>
+          <%= f.submit class: "w3-button w3-white w3-border w3-border-blue" %>
+        </p>
+      </div>
+    </p>
+  <% end %>
+</div>

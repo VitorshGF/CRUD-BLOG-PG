@@ -1,0 +1,15 @@
+<div class="w3-container">
+  <h1>Usuarios:
+  </h1>
+</div>
+
+
+<%= render 'users' %>
+
+<!-- will_paginate -->
+<div class="digg_pagination w3-margin">
+  <%= will_paginate @users, :container => false %>
+</div>
+<!---->
+
+<br></br>

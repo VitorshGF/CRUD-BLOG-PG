@@ -1,0 +1,13 @@
+<!-- Error handling in case that the model does not allow to save, obj is required from the render -->
+<% if obj.errors.any? %>
+  <div class="w3-panel w3-pale-red w3-display-container w3-border">
+    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">×</span>
+    <h2>Estos errores previenen la accion:
+    </h2>
+    <ul>
+      <% obj.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

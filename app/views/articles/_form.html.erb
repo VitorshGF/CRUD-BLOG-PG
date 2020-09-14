@@ -1,0 +1,24 @@
+<%= render "commons/errors", obj: @article %>
+<!-- Prevents from using AJAX with local: true, form_with is the Rails helper -->
+
+<div class="w3-container">
+  <%= form_with(model: @article, local: true) do |f| %>
+    <p>
+      <div>
+        <%= f.label :title, class: "w3-xlarge w3-text-dark-gray" %>
+        <br></br>
+        <%= f.text_field :title, class: "w3-input w3-border" %>
+      </div>
+      <div>
+        <%= f.label :description, class: "w3-xlarge w3-text-dark-gray" %>
+        <br></br>
+        <%= f.text_area :description, class: "w3-input w3-border" %>
+      </div>
+      <div>
+        <p>
+          <%= f.submit class: "w3-button w3-white w3-border w3-border-blue" %>
+        </p>
+      </div>
+    </p>
+  <% end %>
+</div>

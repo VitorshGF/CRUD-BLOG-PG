@@ -1,0 +1,20 @@
+<div class="w3-bar w3-black">
+  <%= link_to "Home", root_path, class: "w3-bar-item w3-button" %>
+
+  <div class="w3-dropdown-hover w3-mobile">
+    <%= link_to "Articulos", articles_path, class: "w3-button" %>
+    <% if logged_in? %>
+      <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
+        <%= button_to 'Nuevo Post', new_article_path, method: :get, class: "w3-bar-item w3-button w3-mobile"  %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Usuarios", users_path, class: "w3-bar-item w3-button" %>
+  <% if logged_in? %>
+    <%= link_to current_user.username,user_path(current_user), class: "w3-bar-item w3-button" %>
+    <%= link_to "Log Out", logout_path, method: :delete, class: "w3-bar-item w3-button" %>
+  <% else %>
+    <%= link_to "Log In", login_path, class: "w3-bar-item w3-button" %>
+  <% end %>
+</div>
